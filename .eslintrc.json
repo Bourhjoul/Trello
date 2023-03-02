@@ -1,0 +1,72 @@
+{
+  "extends": [
+    // By extending from a plugin config, we can get recommended rules without having to add them manually.
+    "eslint-config-prettier",
+    "airbnb",
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "react-app"
+    // This disables the formatting rules in ESLint that Prettier is going to be responsible for handling.
+    // Make sure it's always the last config, so it gets the chance to override other configs.
+  ],
+  "settings": {
+    "react": {
+      // Tells eslint-plugin-react to automatically detect the version of React to use.
+      "version": "detect"
+    },
+    // Tells eslint how to resolve imports
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "tsconfigRootDir": ".",
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "linebreak-style": "off",
+    // Configure prettier
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "endOfLine": "lf",
+        "singleQuote": true,
+        "tabWidth": 2,
+        "indentStyle": "space",
+        "useTabs": true,
+        "trailingComma": "es5"
+      }
+    ],
+    // Disallow the `any` type.
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "react-hooks/exhaustive-deps": "off",
+    // Enforce the use of the shorthand syntax.
+    "object-shorthand": "error",
+    "no-console": "warn"
+    // Add your own rules here to override ones from the extended configs.
+  }
+}
