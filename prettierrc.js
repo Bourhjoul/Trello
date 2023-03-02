@@ -1,8 +1,12 @@
 module.exports = {
-  trailingComma: "all",
-  tabWidth: 2,
-  semi: true,
-  singleQuote: true,
-  printWidth: 120,
-  bracketSpacing: true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.trailingComma": "es5",
+  "prettier.requireConfig": false,
+  "prettier.singleQuote": true,
+  "prettier.useTabs": true,
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 80,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
 };
