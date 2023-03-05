@@ -1,6 +1,5 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import React from 'react';
-import { MainLayout } from '../Components/Layouts/MainLayout';
 
 interface AppProps {
   children: React.ReactNode;
@@ -45,9 +44,5 @@ const theme = createTheme({
 });
 
 export function AppProviders({ children }: AppProps) {
-  return (
-    <ThemeProvider theme={theme}>
-      <MainLayout>{children}</MainLayout>;
-    </ThemeProvider>
-  );
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 }
