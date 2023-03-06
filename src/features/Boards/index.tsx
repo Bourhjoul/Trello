@@ -1,6 +1,7 @@
 import React from 'react';
 import Divider from '@mui/material/Divider';
 import { BoardHeader } from './Components/BoardHeader/BoardHeader';
+import { BoardsList } from './Components/BoardsList/Boardslist';
 
 export function Boards() {
   return (
@@ -8,10 +9,11 @@ export function Boards() {
       <BoardHeader />
       <Divider
         sx={{
-          width: '80%',
+          width: '90%',
           margin: 'auto',
         }}
       />
+      <BoardsList />
     </>
   );
 }
