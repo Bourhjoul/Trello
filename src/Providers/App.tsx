@@ -37,6 +37,16 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'capitalize',
+          borderRadius: '5px',
+          boxShadow: 'none',
+        },
+        contained: {
+          background: '#c5ffe3',
+          color: '#007991',
+          ':hover': {
+            background: 'rgb(0 121 145 / 4%)',
+            boxShadow: '0px 0px 6px 1px rgba(0,0,0,0.1)',
+          },
         },
       },
     },

@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material';
 import React, { useState } from 'react';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { useNavigate } from 'react-router-dom';
 
 interface BoardCardProps {
   title: string;
@@ -8,6 +9,7 @@ interface BoardCardProps {
 
 export function BoardCard({ title }: BoardCardProps) {
   const [isHovering, setIsHovering] = useState(false);
+  const navigate = useNavigate();
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -30,6 +32,9 @@ export function BoardCard({ title }: BoardCardProps) {
       padding={1}
       height="85px"
       fontWeight="600"
+      onClick={() => {
+        navigate('/board/545');
+      }}
       sx={{
         ':hover': {
           backgroundColor: '#005866',
