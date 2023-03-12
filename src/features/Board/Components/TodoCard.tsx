@@ -18,8 +18,8 @@ export function TodoCard() {
       p={1}
       container
       bgcolor="white"
+      borderRadius="2px"
       boxShadow="0px 8px 10px -3px rgba(0,0,0,0.1)"
-      borderRadius="6px"
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       sx={{
